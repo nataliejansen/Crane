@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Crane.DATA.EF.Models
 {
+
     public partial class Beer
     {
         public int BeerId { get; set; }
