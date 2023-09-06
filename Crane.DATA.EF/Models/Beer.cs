@@ -14,6 +14,6 @@ namespace Crane.DATA.EF.Models
         public string? BeerImage { get; set; }
         public bool? IsCurrent { get; set; }
 
-        public virtual BeerType BeerType { get; set; } = null!;
+        public virtual BeerType? BeerType { get; set; } = null!;
     }
 }
