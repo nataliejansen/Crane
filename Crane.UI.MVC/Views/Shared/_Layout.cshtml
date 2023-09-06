@@ -49,20 +49,27 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="beers.html" class="nav-item nav-link">Beers</a>
+                        <a asp-action="Index" asp-controller="Home" class="nav-item nav-link active">Home</a>
+                        <a asp-action="Index" asp-controller="TeamMembers" class="nav-item nav-link">About</a>
+                        <a asp-action="Index" asp-controller="Beers" class="nav-item nav-link">Beers</a>
                         <a href="store.html" class="nav-item nav-link">Taproom</a>
-                        <a href="store.html" class="nav-item nav-link">Store</a>
+                        <a asp-action="Index" asp-controller="Merch" class="nav-item nav-link">Store</a>
+                        
+                        @if (User.IsInRole("Admin"))
+                        {        
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="blog.html" class="dropdown-item">Blog Article</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                    <a asp-action="ListUsers" asp-controller="Administration" class="dropdown-item">Users</a>
+                                    <a asp-action="ListRoles" asp-controller="Administration" class="dropdown-item">Roles</a>
+                                <a asp-action="Index" asp-controller="BeerTypes" class="dropdown-item">Types of Beer</a>
+                                <a asp-action="Index" asp-controller="MerchTypes" class="dropdown-item">Types of Merchandise</a>
+@*                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>*@
                             </div>
                         </div>
+                        }
+
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <partial name="_LoginPartial" />
                     </div>

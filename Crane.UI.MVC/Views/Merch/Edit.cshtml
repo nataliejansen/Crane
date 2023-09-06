@@ -1,0 +1,59 @@
+﻿@model Crane.DATA.EF.Models.Merch
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Merch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MerchId" />
+            <div class="form-group">
+                <label asp-for="MerchName" class="control-label"></label>
+                <input asp-for="MerchName" class="form-control" />
+                <span asp-validation-for="MerchName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchDescription" class="control-label"></label>
+                <input asp-for="MerchDescription" class="form-control" />
+                <span asp-validation-for="MerchDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchPrice" class="control-label"></label>
+                <input asp-for="MerchPrice" class="form-control" />
+                <span asp-validation-for="MerchPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsInStock" /> @Html.DisplayNameFor(model => model.IsInStock)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchTypeId" class="control-label"></label>
+                <select asp-for="MerchTypeId" class="form-control" asp-items="ViewBag.MerchTypeId"></select>
+                <span asp-validation-for="MerchTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchImage" class="control-label"></label>
+                <input asp-for="MerchImage" class="form-control" />
+                <span asp-validation-for="MerchImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

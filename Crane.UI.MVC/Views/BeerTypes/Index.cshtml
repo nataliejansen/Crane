@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Crane.DATA.EF.Models.BeerType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BeerTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeerTypeDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeerTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeerTypeDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BeerTypeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BeerTypeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BeerTypeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@model Crane.DATA.EF.Models.MerchType
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MerchType</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MerchTypeId" class="control-label"></label>
+                <input asp-for="MerchTypeId" class="form-control" />
+                <span asp-validation-for="MerchTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchName" class="control-label"></label>
+                <input asp-for="MerchName" class="form-control" />
+                <span asp-validation-for="MerchName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchDescription" class="control-label"></label>
+                <input asp-for="MerchDescription" class="form-control" />
+                <span asp-validation-for="MerchDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

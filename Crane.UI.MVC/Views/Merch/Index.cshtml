@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Crane.DATA.EF.Models.Merch>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchType.MerchName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MerchId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MerchId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MerchId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

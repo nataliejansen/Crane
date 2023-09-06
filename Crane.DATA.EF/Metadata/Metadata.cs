@@ -37,7 +37,7 @@ namespace Crane.DATA.EF.Models //.Metadata
         [Display(Name = "Image")]
         public string? BeerImage { get; set; }
 
-        [Display(Name = "Currently Active?")]
+        [Display(Name = "Status")]
         public bool? IsCurrent { get; set; }
     }
 
