@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Protecting sensitive information
+/Crane.UI.MVC/appsettings.json
