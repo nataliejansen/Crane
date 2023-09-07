@@ -182,5 +182,10 @@ namespace Crane.UI.MVC.Controllers
         {
           return (_context.Beers?.Any(e => e.BeerId == id)).GetValueOrDefault();
         }
+
+        public IActionResult Taproom()
+        {
+            return View();
+        }
     }
 }

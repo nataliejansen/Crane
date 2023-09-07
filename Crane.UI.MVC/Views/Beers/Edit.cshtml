@@ -1,15 +1,25 @@
 ﻿@model Crane.DATA.EF.Models.Beer
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Beer" ;
 }
 
-<h1>Edit</h1>
-
-<h4>Beer</h4>
-<hr />
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">@ViewData["Title"]</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Beers" class="btn btn-primary">Back to List</a></li>
+                @*                <li class="breadcrumb-item text-dark" aria-current="page">@ViewData["Title"]</li>*@
+            </ol>
+        </nav>
+        
+    </div>
+</div>
+<!-- Page Header End -->
 <div class="row">
-    <div class="col-md-4">
+    <div class="offset-4 col-md-4 my-5">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="BeerId" />
@@ -43,11 +53,17 @@
                 <input asp-for="BeerImage" class="form-control" />
                 <span asp-validation-for="BeerImage" class="text-danger"></span>
             </div>
-            <div class="form-group">
+             <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsCurrent" /> @Html.DisplayNameFor(model => model.IsCurrent)
+                </label>
+            </div>
+            
+            @*<div class="form-group">
                 <label asp-for="IsCurrent" class="control-label"></label>
                 <input asp-for="IsCurrent" class="form-control" />
                 <span asp-validation-for="IsCurrent" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -55,9 +71,9 @@
     </div>
 </div>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

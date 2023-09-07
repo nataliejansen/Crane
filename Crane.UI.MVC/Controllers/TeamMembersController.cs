@@ -164,5 +164,11 @@ namespace Crane.UI.MVC.Controllers
         {
           return (_context.TeamMembers?.Any(e => e.TeamMemberId == id)).GetValueOrDefault();
         }
+
+        [AllowAnonymous]
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
