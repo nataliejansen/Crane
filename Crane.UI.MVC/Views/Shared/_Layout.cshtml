@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,6 +32,9 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- Datatables.net-->
+    <link href="https://cdn.datatables.net/v/bs5/dt-1.13.6/r-2.5.0/datatables.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,7 +76,7 @@
                         </div>
                         }
 
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a asp-action="Contact" asp-controller="Home" class="nav-item nav-link">Contact</a>
                         <partial name="_LoginPartial" />
                     </div>
                 </div>
@@ -79,7 +85,7 @@
     </div>
     <!-- Navbar End -->
 
-    @if (ViewData["Title"] == "Home"){
+    @if (ViewData["Title"] == "Home") {
         <!-- Carousel Start -->
         <div class="container-fluid px-0 mb-5">
             <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -243,6 +249,9 @@
     <script src="~/lib/easing/easing.min.js"></script>
     <script src="~/lib/waypoints/waypoints.min.js"></script>
     <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- datatables.net -->
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/r-2.5.0/datatables.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
