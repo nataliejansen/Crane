@@ -131,9 +131,7 @@ namespace Crane.DATA.EF.Models
 
             modelBuilder.Entity<Beer>(entity =>
             {
-                entity.Property(e => e.BeerId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("BeerID");
+                entity.Property(e => e.BeerId).HasColumnName("BeerID");
 
                 entity.Property(e => e.BeerAbv)
                     .HasColumnType("decimal(18, 0)")

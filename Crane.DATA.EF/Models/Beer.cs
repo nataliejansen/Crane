@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Crane.DATA.EF.Models
 {
-
     public partial class Beer
     {
         public int BeerId { get; set; }
@@ -13,7 +12,7 @@ namespace Crane.DATA.EF.Models
         public bool IsOnTap { get; set; }
         public int BeerTypeId { get; set; }
         public string? BeerImage { get; set; }
-        public bool? IsCurrent { get; set; }
+        public bool IsCurrent { get; set; }
 
         public virtual BeerType? BeerType { get; set; } = null!;
     }

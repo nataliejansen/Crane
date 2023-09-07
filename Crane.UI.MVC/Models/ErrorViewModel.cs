@@ -1,4 +1,4 @@
-namespace Crane.UI.MVC.Models
+﻿namespace Crane.UI.MVC.Models
 {
     public class ErrorViewModel
     {

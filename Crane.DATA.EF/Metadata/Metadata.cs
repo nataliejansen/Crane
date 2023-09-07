@@ -37,8 +37,8 @@ namespace Crane.DATA.EF.Models //.Metadata
         [Display(Name = "Image")]
         public string? BeerImage { get; set; }
 
-        [Display(Name = "Status")]
-        public bool? IsCurrent { get; set; }
+        [Display(Name = "Active?")]
+        public bool IsCurrent { get; set; }
     }
 
     #endregion
